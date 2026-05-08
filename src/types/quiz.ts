@@ -52,4 +52,31 @@ export interface ValidationError {
   message: string;
 }
 
-export type AppTab = 'editor' | 'preview';
+export type AppTab = 'editor' | 'preview' | 'appearance';
+
+export type LayoutDensity = 'compact' | 'default' | 'spacious';
+
+export type ThemePresetId = 'default' | 'dark' | 'ocean' | 'forest' | 'rose' | 'slate';
+
+export interface ThemeColors {
+  brand: string;
+  brandDark: string;
+  brandLight: string;
+  success: string;
+  successBg: string;
+  danger: string;
+  dangerBg: string;
+  warning: string;
+  warningBg: string;
+  text: string;
+  textMuted: string;
+  border: string;
+  surface: string;
+  white: string;
+}
+
+export interface ThemeSettings {
+  preset: ThemePresetId;
+  overrides: Partial<ThemeColors>;
+  layout: LayoutDensity;
+}
