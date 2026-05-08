@@ -7,6 +7,7 @@ import PreviewPlayer from './components/PreviewPlayer';
 import ValidationPanel from './components/ValidationPanel';
 import ImportScormButton from './components/ImportScormButton';
 import ExportScormButton from './components/ExportScormButton';
+import ThemeCustomizer from './components/ThemeCustomizer';
 
 const AUTOSAVE_KEY = 'scorm-quiz-builder-draft';
 
@@ -110,6 +111,9 @@ export default function App() {
           <button className={`app-tab ${tab === 'preview' ? 'active' : ''}`} onClick={() => setTab('preview')}>
             Preview
           </button>
+          <button className={`app-tab ${tab === 'appearance' ? 'active' : ''}`} onClick={() => setTab('appearance')}>
+            Appearance
+          </button>
         </div>
 
         {/* Save indicator */}
@@ -145,6 +149,10 @@ export default function App() {
 
         {tab === 'preview' && (
           <PreviewPlayer quiz={quiz} />
+        )}
+
+        {tab === 'appearance' && (
+          <ThemeCustomizer />
         )}
       </main>
     </div>
