@@ -1,6 +1,13 @@
 /* SCORM 1.2 Quiz Runtime
  * Reads QUIZ_DATA global (set inline in index.html) or falls back to fetching quiz-data.json.
  * Depends on scorm-wrapper.js being loaded first.
+ *
+ * NOTE — Answer visibility:
+ * Correct answers (correctChoiceIds) are present in the client because grading is client-side.
+ * This is a fundamental property of static SCORM packages — the quiz data must be served to
+ * the browser to display and grade the quiz, so it is always accessible via DevTools or the
+ * Network tab regardless of whether it is inlined or fetched.  Obfuscation does not help.
+ * Server-side grading is the only way to hide answers, and that requires a backend (V2+).
  */
 (function (global) {
   'use strict';
