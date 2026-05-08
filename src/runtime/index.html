@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{QUIZ_TITLE}}</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="quiz-container">
+      <div id="quiz-header">
+        <h1 id="quiz-title">Loading…</h1>
+        <p id="quiz-description"></p>
+      </div>
+      <div id="quiz-body"></div>
+      <div id="quiz-footer"></div>
+    </div>
+
+    <!-- Quiz data embedded inline for reliability across LMS environments -->
+    <script>
+      window.QUIZ_DATA = {{QUIZ_DATA_JSON}};
+    </script>
+    <script src="scorm-wrapper.js"></script>
+    <script src="quiz-runtime.js"></script>
+  </body>
+</html>
